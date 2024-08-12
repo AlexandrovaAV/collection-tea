@@ -1,0 +1,21 @@
+<section class="container py-5">
+  <h2 class="fs-3 text-center fw-bold text-black pt-5 py-md-0">Наши чайные коллекции</h2>
+  <div class="row justify-content-between py-4 px-4 px-md-0">
+    <div class="px-2 col-xl-4 col-md-6 mb-3" *ngFor="let product of products">
+      <div class="card">
+        <a class="card-img-top" title="{{product.title}}">
+          <img src="{{product.image}}" alt="{{product.title}}" class="card-img-top">
+        </a>
+        <div class="card-body d-flex flex-column justify-content-between">
+          <h5 class="card-title text-black fw-bold">{{product.title}}</h5>
+          <p class="card-text text-black">{{product.description}}</p>
+          <div class="d-flex flex-row justify-content-between align-items-center">
+            <a [routerLink]="['/catalog', product.id]" class="hvr-shrink btn btn-primary">Подробнее</a>
+            <button type="button" class="btn btn-outline-success fs-5 py-1 px-3 m-0"
+                    [queryParams]="{product: product.title}" routerLink="/order">{{product.price}}₽</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,133 @@
+<section class="py-5 row justify-content-center w-100">
+  <h2 class="fw-bold text-center mb-4">Сделать заказ</h2>
+
+  <form
+    [formGroup]="signInForm"
+    (ngSubmit)="signIn()"
+    class="col-md-10 col-lg-7 ms-auto me-auto text-black">
+
+    <div class="row justify-content-center ">
+      <div class="col-8 col-sm-12 mb-sm-3 mb-2 px-sm-3">
+        <label for="product" class="form-label">Товар</label>
+        <input type="text" id="product" name="product" class="form-control" formControlName="product" [readonly]="true">
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-8 col-sm-6 col-md mb-sm-3 mb-2 px-sm-3 position-relative">
+        <label for="name" class="form-label"
+               [class]="{'text-danger': name?.invalid && (name?.dirty || name?.touched)}">Имя</label>
+        <input type="text" id="name" name="name"
+               class="form-control position-relative z-2"
+               required formControlName="name"
+               pattern="^([a-zA-Z]*|[а-яА-Я]*)$">
+
+        <div class="position-absolute message z-0"
+             *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+          <div class="text-danger fs-5" *ngIf="name?.errors?.['required']">*</div>
+          <div class="error text-danger" *ngIf="name?.errors?.['pattern']">Поле может содержать только буквы</div>
+        </div>
+      </div>
+
+      <div class="col-8 col-sm-6 col-md mb-sm-3 mb-2 px-sm-3 position-relative">
+        <label for="surname" class="form-label"
+               [class]="{'text-danger': lastName?.invalid && (lastName?.dirty || lastName?.touched)}">Фамилия</label>
+        <input type="text" id="surname" name="surname"
+               class="form-control position-relative z-2"
+               required formControlName="lastName"
+               pattern="^([a-zA-Z]*|[а-яА-Я]*)$">
+
+        <div class="position-absolute message z-0"
+             *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)">
+          <div class="text-danger fs-5" *ngIf="lastName?.errors?.['required']">*</div>
+          <div class="error text-danger" *ngIf="lastName?.errors?.['pattern']">Поле может содержать только буквы</div>
+        </div>
+      </div>
+
+      <div class="col-8 col-sm-12 col-md mb-sm-3 mb-2 px-sm-3 position-relative">
+        <label for="phone" class="form-label"
+               [class]="{'text-danger': phone?.invalid && (phone?.dirty || phone?.touched)}">Телефон</label>
+        <input type="text" id="phone" name="phone"
+               class="form-control position-relative z-2"
+               required formControlName="phone">
+
+        <div class="position-absolute message z-0"
+             *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)">
+          <div class="text-danger fs-5" *ngIf="phone?.errors?.['required']">*</div>
+          <div class="error text-danger" *ngIf="phone?.errors?.['pattern']">Только российский номер. Символы могут быть только -</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-8 col-sm-6 col-md mb-sm-3 mb-2 px-sm-3 position-relative">
+        <label for="country" class="form-label"
+               [class]="{'text-danger': country?.invalid && (country?.dirty || country?.touched)}">Страна</label>
+        <input type="text" id="country" name="country"
+               class="form-control position-relative z-2"
+               formControlName="country"
+               required pattern="^([a-zA-Z]*|[а-яА-Я]*)$">
+
+        <div class="position-absolute message z-0"
+             *ngIf="country?.invalid && (country?.dirty || country?.touched)">
+          <div class="text-danger fs-5" *ngIf="country?.errors?.['required']">*</div>
+          <div class="error text-danger" *ngIf="country?.errors?.['pattern']">Поле может содержать только буквы</div>
+        </div>
+      </div>
+
+      <div class="col-8 col-sm-6 col-md mb-sm-3 mb-2 px-sm-3 position-relative">
+        <label for="index" class="form-label"
+               [class]="{'text-danger': index?.invalid && (index?.dirty || index?.touched)}">Индекс</label>
+        <input type="text" id="index" name="index" class="form-control z-2 position-relative" formControlName="index"
+               required pattern="^\d{6}$">
+
+        <div class="position-absolute message z-0"
+             *ngIf="index?.invalid && (index?.dirty || index?.touched)">
+          <div class="text-danger fs-5" *ngIf="index?.errors?.['required']">*</div>
+          <div class="error text-danger" *ngIf="index?.errors?.['pattern']">Поле может содержать 6 цифр</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-8 col-sm-12 mb-sm-3 mb-2 px-sm-3 position-relative">
+        <label for="address" class="form-label"
+               [class]="{'text-danger': address?.invalid && (address?.dirty || address?.touched)}">Адрес</label>
+        <input type="text" id="address" name="address"
+               class="form-control position-relative z-2"
+               required formControlName="address" pattern="^[а-яА-Я0-9a-zA-Z\d ,.\-\/\\]*$">
+
+        <div class="position-absolute message z-0"
+             *ngIf="address?.invalid && (address?.dirty || address?.touched)">
+          <div class="text-danger fs-5" *ngIf="address?.errors?.['required']">*</div>
+          <div class="error text-danger" *ngIf="address?.errors?.['pattern']">Поле может содержать буквы, символы<b>(,./-\)</b>,
+            пробелы
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center ">
+      <div class="col-8 col-sm-12 mb-sm-3 mb-2 px-sm-3">
+        <label for="comment" class="form-label">Комментарий к заказу</label>
+        <textarea id="comment" name="comment" formControlName="comment" class="form-control"></textarea>
+      </div>
+    </div>
+
+    <div class="block-btn row justify-content-center justify-content-sm-start px-sm-3 position-relative z-1">
+      <button
+        [disabled]="signInForm.invalid || signInForm.disabled"
+        class="btn btn-primary px-4 col-5 col-sm-3 hvr-shadow position-relative z-3" id="create-order">Отправить
+      </button>
+    </div>
+    <div class="text-danger" *ngIf="notSuccess">Произошла ошибка. Попробуйте еще раз!</div>
+  </form>
+
+  <div class="col-md-10 col-lg-7 px-4 position-fixed z-3" id="success" #success>
+    <div class="fs-3 fw-bold text-center text-primary py-5 my-5 border border-primary rounded-4 bg-white">
+      <div>Спасибо за заказ!</div>
+      <div>Мы свяжемся с вами в ближайшее время!</div>
+    </div>
+  </div>
+
+</section>

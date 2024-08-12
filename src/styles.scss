@@ -1,0 +1,101 @@
+body, html {
+  height: 100%;
+}
+
+app-root,
+app-layout {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#accordion h6 span {
+  position: absolute;
+  background-size: 100%;
+  right: 28px;
+  top: calc(50% - 5px);
+  background-position: center;
+}
+.ui-state-hover .ui-icon, .ui-state-focus .ui-icon, .ui-button:hover .ui-icon, .ui-button:focus .ui-icon {
+  background-image: url("assets/images/arrow_close.svg");
+}
+
+.ui-state-active .ui-icon {
+  background-image: url("assets/images/arrow_open.svg");
+}
+
+.ui-icon, .ui-widget-content .ui-icon {
+  background-image: url("assets/images/arrow_close.svg")
+}
+
+#name-error, #surname-error, #phone-error, #country-error, #index-error, #address-error {
+  font-size: 12px;
+  color: red;
+}
+
+.mfp-title {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 20px;
+  max-width: 100%;
+  color: #000000;
+  font-weight: bold;
+  background: rgb(255 255 255 / 74%);
+}
+
+@media screen and (max-width: 2560px) {
+  .slider div ~ div div {
+    max-width: 525px;
+  }
+  .slider div div ~ div div {
+    max-width: 594px;
+  }
+}
+
+@media screen and (max-width: 1019px) {
+  .slider div div ~ div div {
+    max-width: 550px;
+  }
+}
+
+@media screen and (max-width: 789px) {
+  .slider div div ~ div div {
+    max-width: 520px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .slick-arrow {
+    display: none;
+  }
+  .slider h1 {
+    font-size: 26px;
+  }
+  .slider button {
+    font-size: 12px;
+  }
+  .slider div ~ div div {
+    max-width: 320px;
+  }
+  .slider div div ~ div div {
+    max-width: 380px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .slider h1 {
+    font-size: 20px;
+  }
+  .slider h1 ~ div {
+    font-size: 12px;
+  }
+  .slider div ~ div div {
+    max-width: 280px;
+  }
+  .slider div div ~ div div {
+    max-width: 270px;
+  }
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

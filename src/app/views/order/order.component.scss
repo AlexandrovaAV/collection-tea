@@ -1,0 +1,46 @@
+input.ng-invalid.ng-dirty,
+input.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+input.ng-invalid.ng-dirty + label,
+input.ng-invalid.ng-touched + label {
+  color: red;
+}
+
+#success {
+  align-self: center;
+  transform: scale(0);
+  transition: .6s;
+}
+
+.message {
+  top: 50%;
+  left: 0;
+  width: 100%;
+}
+
+.error {
+  display: inline-block;
+  position: absolute;
+  bottom: -50px;
+  left: 17px;
+  font-size: 12px;
+  width: 100%;
+}
+
+@media screen and (max-width: 459px) {
+  #address + .message > .error{
+    white-space: nowrap;
+    left: 12px;
+  }
+}
+
+
+@media screen and (max-width: 378px) {
+  #address + .message > .error{
+    font-size: 10px;
+    white-space: nowrap;
+    left: 12px;
+  }
+}

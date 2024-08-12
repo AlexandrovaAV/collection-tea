@@ -1,0 +1,78 @@
+<div class="modal position-fixed bg-black bg-opacity-50" tabindex="-1" #modal>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p>Посмотрите наши чайные коллекции</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close" (click)="showModal()">Close</button>
+        <button type="button" [routerLink]="['catalog']" class="btn btn-primary">Смотреть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <section class="py-5 position-relative">
+    <div>
+      <div class="position-absolute top-50 translate-middle-y ms-md-5 px-md-5 ms-sm-3 px-sm-3 ms-1 px-1">
+        <h1 class="fw-bold mb-md-4 mb-1">Скидки на травянные чаи</h1>
+        <button class="hvr-pulse btn btn-primary rounded-1 px-md-5 px-sm-2 px-1 mt-md-4 mt-1" routerLink="/catalog">Подробнее</button>
+      </div>
+      <img src="./assets/images/image1.png" alt="Скидки на травянные чаи" class="col-12">
+    </div>
+  </section>
+
+  <section class="py-4 row justify-content-center ms-auto me-auto">
+    <h2 class="fs-3 text-center fw-bold text-black col-12 col-lg-9">Ответы на часто задаваемые вопросы</h2>
+    <div id="accordion" class="py-4 col-12 col-lg-9">
+      <h6 class="p-3 p-sm-4 pe-5 border border-0 bg-primary bg-gradient text-white mb-3 fw-bold rounded-2">
+        Собираете ли
+        вы подарочные боксы?</h6>
+      <div class="border border-0">
+        <p>
+          Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+        </p>
+      </div>
+      <h6 class="p-3 p-sm-4 pe-5 border border-0 bg-primary bg-gradient text-white mb-3 fw-bold rounded-2">Сколько
+        у вас
+        разновидностей чая?</h6>
+      <div class="border border-0">
+        <p>
+          Существует 6 основных сортов чая: зеленый, белый, желтый, улун, черный и пуэр. Они различаются по
+          степени ферментации — то есть насколько сильно окислилось сырье перед сушкой.
+        </p>
+      </div>
+      <h6 class="p-3 p-sm-4 pe-5 border border-0 bg-primary bg-gradient text-white mb-3 fw-bold rounded-2">В какой
+        срок
+        осуществляется доставка?</h6>
+      <div class="border border-0">
+        <p>
+          В течение 10 дней со дня приема груза для перевозки - при перевозке в городском и пригородном
+          сообщениях.
+        </p>
+        <p>
+          В течение 30 дней со дня, когда груз должен был быть выдан грузополучателю, - при
+          перевозке в междугородном сообщении.
+        </p>
+      </div>
+      <h6 class="p-3 p-sm-4 pe-5 border border-0 bg-primary bg-gradient text-white mb-3 fw-bold rounded-2">У вас
+        обновляется
+        ассортимент?</h6>
+      <div class="border border-0">
+        <p>
+          Обновление всех категорий товаров - один, два раза в неделю. Частичное добавление товара - каждый
+          день.
+        </p>
+      </div>
+      <h6 class="p-3 p-sm-4 pe-5 border border-0 bg-primary bg-gradient text-white mb-3 fw-bold rounded-2">Какого
+        объема у вас
+        пачки чая?</h6>
+      <div class="border border-0">
+        <p>
+          От 200 до 500 грамм.
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
